@@ -205,12 +205,6 @@
                                     <span class="work-category">Poster Design</span>
                                     <h4 class="work-title">Special Weekend Event</h4>
                                     <p class="work-description">Eye-catching poster design for weekend special promotions</p>
-                                    <button class="view-btn" onclick="openModal(this)">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        View Full Size
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -233,12 +227,6 @@
                                     <span class="work-category">Poster Design</span>
                                     <h4 class="work-title">Kitchen Queen Campaign</h4>
                                     <p class="work-description">Professional poster design for kitchen appliance brand</p>
-                                    <button class="view-btn" onclick="openModal(this)">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        View Full Size
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -261,12 +249,6 @@
                                     <span class="work-category">Menu Design</span>
                                     <h4 class="work-title">Burger Menu Design</h4>
                                     <p class="work-description">Appetizing menu poster for restaurant promotion</p>
-                                    <button class="view-btn" onclick="openModal(this)">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        View Full Size
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -284,9 +266,9 @@
                 <div class="work-item" data-category="videos">
                     <div class="work-card">
                         <div class="work-image">
-                            <video controls poster="./assets/videos/video1-thumbnail.jpg">
-                                <source src="./assets/videos/promotional-video.mp4" type="video/mp4">
-                                <source src="./assets/videos/promotional-video.webm" type="video/webm">
+                            <video controls poster="./assets/images/video/Th1.jpg">
+                                <source src="./assets/images/video/Video1.mp4" type="video/mp4">
+                                <source src="./assets/images/video/Video1.mp4" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
                             <div class="video-play-overlay">
@@ -311,7 +293,7 @@
                     </div>
                 </div>
 
-                <div class="work-item" data-category="videos">
+                <!-- <div class="work-item" data-category="videos">
                     <div class="work-card">
                         <div class="work-image">
                             <video controls poster="./assets/videos/video2-thumbnail.jpg">
@@ -339,24 +321,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Branding Projects -->
                 <div class="work-item" data-category="branding">
                     <div class="work-card">
                         <div class="work-image">
-                            <img src="./assets/images/logo-design.jpg" alt="Logo Design Project" loading="lazy">
+                            <img src="./assets/images/logo1.jpeg" alt="Logo Design Project" loading="lazy">
                             <div class="work-overlay">
                                 <div class="work-overlay-content">
                                     <span class="work-category">Logo Design</span>
                                     <h4 class="work-title">Corporate Logo Design</h4>
                                     <p class="work-description">Professional logo design for technology startup</p>
-                                    <button class="view-btn" onclick="openModal(this)">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        View Project
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -371,7 +347,7 @@
                 </div>
 
                 <!-- Website Projects -->
-                <div class="work-item" data-category="websites">
+                <!-- <div class="work-item" data-category="websites">
                     <div class="work-card">
                         <div class="work-image">
                             <img src="./assets/images/website-mockup.jpg" alt="Website Design" loading="lazy">
@@ -380,7 +356,7 @@
                                     <span class="work-category">Web Design</span>
                                     <h4 class="work-title">E-commerce Website</h4>
                                     <p class="work-description">Modern and responsive e-commerce platform</p>
-                                    <button class="view-btn" onclick="openModal(this)">
+                                    <button class="view-btn">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18 13V6C18 5.44772 17.5523 5 17 5H7C6.44772 5 6 5.44772 6 6V13M18 13L22 17L18 21M6 13L2 17L6 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -398,7 +374,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Load More Button -->
             <div class="load-more-container">
@@ -413,9 +389,9 @@
 
         <!-- Enhanced Image Modal -->
         <div class="image-modal" id="imageModal">
-            <div class="modal-backdrop" onclick="closeModal()"></div>
+            <div class="modal-backdrop"></div>
             <div class="modal-content">
-                <button class="modal-close" onclick="closeModal()">
+                <button class="modal-close">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -593,42 +569,6 @@
             });
         });
 
-        // Modal functionality
-        function openModal(button) {
-            const workCard = button.closest('.work-card');
-            const img = workCard.querySelector('img');
-            const title = workCard.querySelector('.work-title').textContent;
-            const category = workCard.querySelector('.work-category').textContent;
-            const description = workCard.querySelector('.work-description').textContent;
-
-            const modal = document.getElementById('imageModal');
-            const modalImg = modal.querySelector('.modal-image');
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalCategory = modal.querySelector('.modal-category');
-            const modalDescription = modal.querySelector('.modal-description');
-
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            modalTitle.textContent = title;
-            modalCategory.textContent = category;
-            modalDescription.textContent = description;
-
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
 
         // Load more functionality
         document.querySelector('.btn-load-more').addEventListener('click', function() {
@@ -683,4 +623,4 @@
     </script>
 </body>
 
-</html> 
+</html>

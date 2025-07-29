@@ -71,8 +71,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -353,6 +352,15 @@ nav ul li a:hover::after {
     box-shadow: var(--shadow-xl);
 }
 
+.btn, .btn-load-more, .btn-contact {
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn:hover, .btn-load-more:hover, .btn-contact:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.1);
+}
+
 /* Sections */
 .section {
     padding: var(--spacing-3xl) 0;
@@ -601,7 +609,26 @@ nav ul li a:hover::after {
 
 /* Work Section */
 .work-section {
-    background: var(--gray-50);
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; /* or 100vh if you want full viewport height */
+}
+
+.work-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 60vh;
+}
+
+.work-grid {
+  flex: 1 1 auto;
+}
+
+.load-more-container {
+  margin-top: auto;
+  padding-bottom: 2rem;
+  text-align: center;
 }
 
 .work-filters {
@@ -640,8 +667,33 @@ nav ul li a:hover::after {
 }
 
 .work-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  animation: none;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.work-item[style*="display: block"] {
+  opacity: 1;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.work-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Overlay fade-in on hover */
+.work-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  background: rgba(0,0,0,0.45);
+}
+
+.work-image:hover .work-overlay,
+.work-image:focus-within .work-overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .work-card {
@@ -660,17 +712,32 @@ nav ul li a:hover::after {
 
 .work-image {
     position: relative;
-    width: 100%;
-    height: 280px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px; /* Ensures a nice card height */
+    background: #000;
 }
 
-.work-image img,
-.work-image video {
+.work-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--transition-slow);
+}
+
+.work-image video{
+    width: 100%;
+    height: 320px;
+    max-width: 100%;
+    max-height: 320px;
+    border-radius: 16px;
+    object-fit: contain; 
+    background: #000;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
 }
 
 .work-card:hover .work-image img {
@@ -805,7 +872,7 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity var(--transition-normal);
+    transition: opacity var(--transition-normal); 
 }
 
 .play-button {
@@ -1234,14 +1301,14 @@ footer::before {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes slideUp {
@@ -1374,6 +1441,23 @@ footer::before {
         padding: var(--spacing-xs) var(--spacing-md);
         font-size: 0.875rem;
     }
+}
+
+@media (max-width: 600px) {
+  .work-image {
+    min-height: 200px;
+  }
+  .work-image video {
+    height: 200px;
+    max-height: 200px;
+    border-radius: 12px;
+    object-fit: contain; /* <-- add this */
+  }
+
+  .btn-load-more {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
