@@ -205,6 +205,15 @@
                                     <span class="work-category">Poster Design</span>
                                     <h4 class="work-title">Special Weekend Event</h4>
                                     <p class="work-description">Eye-catching poster design for weekend special promotions</p>
+<<<<<<< HEAD
+=======
+                                    <button class="view-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        View Full Size
+                                    </button>
+>>>>>>> a6701e57522230659f8ea5013d3eeae3e4b3e976
                                 </div>
                             </div>
                         </div>
@@ -227,6 +236,15 @@
                                     <span class="work-category">Poster Design</span>
                                     <h4 class="work-title">Kitchen Queen Campaign</h4>
                                     <p class="work-description">Professional poster design for kitchen appliance brand</p>
+<<<<<<< HEAD
+=======
+                                    <button class="view-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        View Full Size
+                                    </button>
+>>>>>>> a6701e57522230659f8ea5013d3eeae3e4b3e976
                                 </div>
                             </div>
                         </div>
@@ -249,6 +267,15 @@
                                     <span class="work-category">Menu Design</span>
                                     <h4 class="work-title">Burger Menu Design</h4>
                                     <p class="work-description">Appetizing menu poster for restaurant promotion</p>
+<<<<<<< HEAD
+=======
+                                    <button class="view-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        View Full Size
+                                    </button>
+>>>>>>> a6701e57522230659f8ea5013d3eeae3e4b3e976
                                 </div>
                             </div>
                         </div>
@@ -333,6 +360,15 @@
                                     <span class="work-category">Logo Design</span>
                                     <h4 class="work-title">Corporate Logo Design</h4>
                                     <p class="work-description">Professional logo design for technology startup</p>
+<<<<<<< HEAD
+=======
+                                    <button class="view-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9M21 3L12 12M9 21H3V15M3 21L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        View Project
+                                    </button>
+>>>>>>> a6701e57522230659f8ea5013d3eeae3e4b3e976
                                 </div>
                             </div>
                         </div>
@@ -569,6 +605,54 @@
             });
         });
 
+<<<<<<< HEAD
+=======
+        // --- Modal Functionality for Viewing Posters ---
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const workCard = btn.closest('.work-card');
+                const img = workCard.querySelector('img');
+                if (!img) return; // Only for image-based cards
+
+                showImageModal({
+                    src: img.src,
+                    alt: img.alt,
+                    title: workCard.querySelector('.work-title')?.textContent || '',
+                    category: workCard.querySelector('.work-category')?.textContent || '',
+                    description: workCard.querySelector('.work-description')?.textContent || ''
+                });
+            });
+        });
+
+        function showImageModal({ src, alt, title, category, description }) {
+            const modal = document.getElementById('imageModal');
+            modal.querySelector('.modal-image').src = src;
+            modal.querySelector('.modal-image').alt = alt;
+            modal.querySelector('.modal-title').textContent = title;
+            modal.querySelector('.modal-category').textContent = category;
+            modal.querySelector('.modal-description').textContent = description;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on backdrop or close button click
+        document.querySelector('#imageModal .modal-backdrop').addEventListener('click', hideImageModal);
+        document.querySelector('#imageModal .modal-close').addEventListener('click', hideImageModal);
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('imageModal').classList.contains('show')) {
+                hideImageModal();
+            }
+        });
+>>>>>>> a6701e57522230659f8ea5013d3eeae3e4b3e976
 
         // Load more functionality
         document.querySelector('.btn-load-more').addEventListener('click', function() {
